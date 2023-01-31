@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Excel Upload </legend>
+            <div class="form-group">
+                <label class="form-control-label" for="table_name">Select Table</label>
+                <select class="form-control form-control-lg" id="table_name" name="table_name">
+                    <option value="">--select value--</option>
+                    <option value="Demand">Demand</option>
+                    <option value="Interview">Interview</option>
+                    
+                    <option value="commit_table">commit_table</option>
+                    <option value="wondeals_table">wondeals_table</option>
+                </select>
+            </div>
+            <legend class="border-bottom mb-4">Upload File</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="file_upload">File</label>
+                <input class="form-control form-control-lg" id="file_upload" name="file_upload" required type="file"
+                    value="">
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <input class="btn btn-outline-info" id="submit" name="submit" type="submit" value="submit">
+        </div>
+    </form>
+</div>
+{% endblock content %}

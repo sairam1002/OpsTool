@@ -1,0 +1,315 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        <fieldset class="form-group">
+
+            <strong>My Hire ID/ DSR Req ID :  &nbsp;  </strong>
+          <input type="text" name="dsr_id">
+          <br><br>
+
+
+          
+
+            <legend class="border-bottom mb-4">Hire</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="new_hire">Hire</label>
+                <select class="form-control form-control-lg" id="new_hire" name="new_hire">
+                    <option value="">--select value--</option>
+                    <option value="Replacement">Replacement</option>
+                </select>
+            </div>
+
+
+            <legend class="border-bottom mb-4">slt</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="slt_owner">SLT</label>
+                <select class="form-control form-control-lg" id="slt_owner" name="slt_owner">
+                    <option value="">--select value--</option>
+                    <option value="Shailesh Rao">Shailesh Rao</option>
+                    <option value="Prachi Shah">Prachi Shah</option>
+                    <option value="Mahesh Haridasan">Mahesh Haridasan</option>
+                    <option value="Jamshir Wadia">Jamshir Wadia</option>
+                    <option value="Sreerang Raveendran">Sreerang Raveendran</option>
+                    <option value="Deepak Satyaprasad">Deepak Satyaprasad</option>
+                    <option value="Ashutosh Agarwal">Ashutosh Agarwal</option>
+                </select>
+            </div>
+
+
+            <strong>Account:  &nbsp;  </strong>
+            <input type="text" name="acc"  placeholder="Enter acc name">
+            <br><br>
+
+
+            <label for="primary_skill"><strong>Primary Skill : &nbsp; </strong></label>
+          <select name="skill" id="skill">
+            <option value="" >--select--</option>
+            <option value="OFSAA MUFG">OFSAA MUFG</option>
+            <option value="CR-BA">CR-BA</option>
+            <option value="Moody's CR-BA">TMoody's CR-BA</option>
+            <option value="NFR&PM Scrum role">NFR&PM Scrum role</option>
+            <option value="Finance and asset management">Finance and asset management</option>
+            <option value="OFSAA">OFSAA</option>
+            <option value="Moody's CR-BA">Moody's CR-BA</option>
+            <option value="ODI/ETL">ODI/ETL</option>
+            <option value="Credit Risk-BA">Credit Risk-BA</option>
+            <option value="PM" >PM</option>
+            <option value="OFSAA">OFSAA</option>
+            <option value="Airflow Developer -Technical Skill">Airflow Developer -Technical Skill</option>
+            <option value="ETL Developer (ODI)">ETL Developer (ODI)</option>
+            <option value="Cloud Architect">Cloud Architect</option>
+            <option value="CR-BA">CR-BA</option>
+          </select><br><br>
+
+          <label for="loc"><strong>Location : &nbsp; </strong></label>
+          <select   name="loc" id="loc">
+                 <option value="">--select--</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>
+                <option value="Others">Other</option>
+            </select>
+            <br><br>
+
+
+            <label for="emp_grade" name="emp_grade"><strong>Employee Grade: &nbsp; </strong></label>
+            <select  name="emp_grade" id="emp_grade">
+              <option value="">--select--</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+              <option value="C2">C2</option>
+              <option value="D1">D1</option>
+              <option value="D2">D2</option>
+              <option value="E1">E1</option>
+              <option value="E2">E2</option>
+            </select><br><br>
+
+
+
+
+
+            <!-- <strong>My Hire ID/ DSR Req ID :  &nbsp;  </strong>
+          <input type="text" name="dsr_id"  placeholder="Enter dsr id">
+          <br><br>
+
+          <strong>Project Name:  &nbsp;  </strong>
+          <input type="text" name="project_name"  placeholder="Enter project name">
+          <br><br>
+
+          <strong>Account:  &nbsp;  </strong>
+          <input type="text" name="acc"  placeholder="Enter acc name">
+          <br><br> -->
+
+          <!-- <label for="hire_type"><strong>Hire Type: &nbsp; </strong></label>
+            <select id="hire_type" name="hire_type">
+                <option value="">--select value--</option>
+                <option value="Practice hire">Proactive Hire</option>
+                <option value="Account hirire">Proactive Hire</option>             
+            </select><br><br>
+
+            <label for="new_hire"><strong>Replacement/ New Hire : &nbsp; </strong></label>
+            <select id="new_hire" name="new_hire">  
+                <option value="">--select value--</option>
+                <option value="Replacement">Replacement Hire</option>  
+                <option value="New hire">New Hire</option>  
+            </select><br><br> -->
+
+            <!-- <strong>Replacement Personal Email : &nbsp; </strong><input type="email" name="r_email" >
+            <br><br> -->
+
+
+            <!-- <label for="primary_skill"><strong>Primary Skill : &nbsp; </strong></label>
+          <select name="ps" id="ps">
+            <option value="" selected disabled hidden>--select--</option>
+            <option value="data">Data Lineage</option>
+            <option value="React">React</option>
+            <option value="Technical_Analyst">Technical Analyst</option>
+            <option value="Spring_Boot_Microservices">Spring Boot Microservices</option>
+            <option value="OFSAA-production_support(PFT)">OFSAA-production support(PFT)</option>
+            <option value="OBIEE">OBIEE</option>
+            <option value="ETL">ETL</option>
+            <option value="Oracle_Data_Integrator_(ODI)">Oracle Data Integrator (ODI)</option>
+            <option value="Credit_Risk">Credit Risk</option>
+            <option value="Business_Analyst-Banking" >Business Analyst - Banking</option>
+            <option value="SME_for_ALM,FTP,PFT,LCR&DATA_modelling">SME for ALM,FTP,PFT,LCR &DATA modelling</option>
+            <option value="Data Engineering">Data Engineering</option>
+            <option value="Data Engineering">Data Modeling</option>
+            <option value="Data Engineering">Java</option>
+            <option value="Oracle">Oracle</option>
+            <option value="Treasury Risk">Treasury Risk</option>
+            <option value="Risk and Finance">Risk and Finance</option>
+            <option value="PL/SQL" >PL/SQL</option>
+            <option value="UNIX" >UNIX</option>
+            <option value="Python" >Python</option>
+            <option value="SQL">SQL</option>
+            <option value="Others" >Others</option>
+          </select><br><br>
+
+
+          <label for="loc"><strong>Location : &nbsp; </strong></label>
+            <select   name="loc" id="loc">
+                   <option value="" selected disabled hidden>--select--</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Pune">Pune</option>
+                  <option value="Others">Other</option>
+              </select>
+              <br><br>
+
+              <label for="emp_grade" name="emp_grade"><strong>Employee Grade: &nbsp; </strong></label>
+            <select  style="border: 1.2px solid black; outline: aliceblue; height: 32px; border-radius: 5px; font-size: 15px;" name="emp_grade" id="emp_grade">
+              <option value="" selected disabled hidden>--select--</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+              <option value="C2">C2</option>
+              <option value="D1">D1</option>
+              <option value="D2">D2</option>
+              <option value="E1">E1</option>
+              <option value="E2">E2</option>
+            </select><br><br>
+
+
+            <label for="emp_grade" name="emp_grade"><strong>Employee Grade: &nbsp; </strong></label>
+            <select name="emp_grade" id="emp_grade">
+              <option value="" selected disabled hidden>--select--</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+              <option value="C2">C2</option>
+              <option value="D1">D1</option>
+              <option value="D2">D2</option>
+              <option value="E1">E1</option>
+              <option value="E2">E2</option>
+            </select><br><br>
+
+            <label for="resource_status" ><strong>Resource Status : &nbsp; </strong></label>
+            <select  name="resource_status" id="resource_status">
+                <option value="" selected disabled hidden>--select--</option>
+                <option value="Closed">Closed</option>
+                <option value="Hold">Hold</option>
+                <option value="others">Pending Start</option>
+                <option value="others">Joined</option>
+                <option value="Profiles Screening">Profiles Screening</option>
+                <option value="R-1-WIP">R-1-WIP</option>
+                <option value="R-1-Select">R-1-Select</option>
+                <option value="R-2-WIP">R-2-WIP</option>
+                <option value="R-2-Select">R-2-Select</option>
+                <option value="Client Interview-WIP">Client Interview-WIP</option>
+                <option value="Client Select">Client Select</option>
+                <option value="Offer WIP">Offer WIP</option>
+                <option value="Fitment Pending">Fitment Pending</option>
+                <option value="Offer approved">Offer approved</option>
+            </select><br><br>
+
+
+            <legend class="border-bottom mb-4">slt</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="slt_owner">SLT</label>
+                <select class="form-control form-control-lg" id="slt_owner" name="slt_owner">
+                    <option value="">--select value--</option>
+                    <option value="Shailesh Rao">Shailesh Rao</option>
+                    <option value="Prachi Shah">Prachi Shah</option>
+                    <option value="Mahesh Haridasan">Mahesh Haridasan</option>
+                    <option value="Jamshir Wadia">Jamshir Wadia</option>
+                    <option value="Sreerang Raveendran">Sreerang Raveendran</option>
+                    <option value="Deepak Satyaprasad">Deepak Satyaprasad</option>
+                    <option value="Ashutosh Agarwal">Ashutosh Agarwal</option>
+                </select>
+            </div> -->
+
+            
+
+
+            <!-- <legend class="border-bottom mb-4">Quarter</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="quarter">Quarter</label>
+                <select class="form-control form-control-lg" id="quarter" name="quarter">
+                    <option value="">--select value--</option>
+                    <option value="Q1">Q1</option>
+                    <option value="Q2">Q2</option>
+                    <option value="Q3">Q3</option>
+                    <option value="Q4">Q4</option>
+                </select>
+            </div> -->
+
+            <!-- <legend class="border-bottom mb-4">Sales_Stage</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="sales_stage">Sales_Stage</label>
+                <select class="form-control form-control-lg" id="sales_stage" name="sales_stage">
+                    <option value="">--select value--</option>
+                    <option value="1. Initiation stage">1. Initiation stage</option>
+                    <option value="2.Customer Discussion">2.Customer Discussion</option>
+                    <option value="3. Proposal Submitted">3. Proposal Submitted</option>
+                    <option value="4. Contract Negotiation">4. Contract Negotiation</option>
+                    <option value="5. Won-Pending">5. Won-Pending</option>
+                    <option value="6. Won">6. Won</option>
+                </select>
+            </div> -->
+
+            <!-- <legend class="border-bottom mb-4">Region</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="region">Region</label>
+                <select class="form-control form-control-lg" id="region" name="region">
+                    <option value="">--select value--</option>
+                    <option value="APAC">APAC</option>
+                    <option value="NA">NA</option>
+                    <option value="US">US</option>
+                    <option value="Europe">Europe</option>
+                    <option value="UAE">UAE</option>
+                    <option value="AU / NZ">AU/NZ</option>
+                    <option value="SG">SG</option>
+                    <option value="PH">PH</option>
+                </select>
+            </div> -->
+
+            <!-- <legend class="border-bottom mb-4">Country</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="country">Country</label>
+                <select class="form-control form-control-lg" id="country" name="country">
+                    <option value="">--select value--</option>
+                    <option value="AU">Australia</option>
+                    <option value="CA">Canada</option>
+                    <option value="IN">India</option>
+                    <option value="PH">Philippines</option>
+                    <option value="UK">UK</option>
+                    <option value="USA">USA</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="SG">Singapore</option>
+                </select>
+            </div> -->
+            
+            <!-- <legend class="border-bottom mb-4">status</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="status">status</label>
+                <select class="form-control form-control-lg" id="status" name="status">
+                    <option value="">--select value--</option>
+                    <option value="won">Won</option>
+                    <option value="Commit">Commit</option>
+                    <option value="Pipeline">Pipeline</option>
+                </select>
+            </div> -->
+
+            <!-- <legend class="border-bottom mb-4">practice</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="practice">practice</label>
+                <select class="form-control form-control-lg" id="practice" name="practice">
+                    <option value="">--select value--</option>
+                    <option value="R&F">R&F</option>
+                    <option value="Compilance">Compilance</option>
+                </select>
+            </div> -->
+
+
+        </fieldset>
+
+          
+
+        <div class="form-group">
+            <input class="btn btn-outline-info" id="submit" name="submit" type="submit" value="submit">
+        </div>
+    </form>
+</div>
+{% endblock content %}

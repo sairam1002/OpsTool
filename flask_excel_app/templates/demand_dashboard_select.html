@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form method="POST" action="" enctype="multipart/form-data">
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Dashboard Select</legend>
+                    <div class="form-group">
+                        <label class="form-control-label" for="summary_name">Dashboard Select</label>
+                        <select class="form-control form-control-lg" id="summary_name" name="summary_name">
+                            <option value="demand_display_summary-1">DashBoard 1 - Overall Demand Summary</option>
+                            <option value="demand_display_summary-2">DashBoard 2 - Practice wise Summary</option>
+                            <option value="demand_display_summary-3">DashBoard 3 - SLT wise Summary</option>
+                           
+                        </select>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <input class="btn btn-outline-info" id="submit" name="submit" type="submit" value="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="ml-auto">
+                WonDeals
+            </h4>
+        </div>
+        <div class="panel-body table-responsive" id="tables-display">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                <thead class="cf">
+                    <tr>
+                        <th>Id</th>
+                        <th>Project Id</th>
+                        <th>Carry Forward</th>
+                        <th>Project Type</th>
+                        <th>Email Id</th>
+                        <th>Project Name</th>
+                        <th>SLT Owner</th>
+                        <th>Practice Owner</th>
+                        <th>Practice</th>
+                        <th>Quarter</th>
+                        <th>Project Manager</th>
+                        <th>Resource Name</th>
+                        <th>Resource Country</th>
+                        <th>Resource Level</th>
+                        <th>Onshore Offshore</th>
+                        <th>Project Country</th>
+                        <th>FTE</th>
+                        <th>Revenue Daily Rate</th>
+                        <th>ADRC</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Days Jan 2023</th>
+                        <th>Days Feb 2023</th>
+                        <th>Days March 2023</th>
+                        <th>Days April 2023</th>
+                        <th>Days May 2023</th>
+                        <th>Days June 2023</th>
+                        <th>Days July 2023</th>
+                        <th>Days Aug 2023</th>
+                        <th>Days Sept 2023</th>
+                        <th>Days Oct 2023</th>
+                        <th>Days Nov 2023</th>
+                        <th>Days Dec 2023</th>
+                        <th>Total Days</th>
+                        <th>Revenue Jan 2023</th>
+                        <th>Revenue Feb 2023</th>
+                        <th>Revenue March 2023</th>
+                        <th>Revenue April 2023</th>
+                        <th>Revenue May 2023</th>
+                        <th>Revenue June 2023</th>
+                        <th>Revenue July 2023</th>
+                        <th>Revenue Aug 2023</th>
+                        <th>Revenue Sept 2023</th>
+                        <th>Revenue Oct 2023</th>
+                        <th>Revenue Nov 2023</th>
+                        <th>Revenue Dec 2023</th>
+                        <th>Total Revenue</th>
+                        <th>Total Cost</th>
+                        <th>CM</th>
+                        <th>Resource CM Percentage</th>
+                        <th>Last Updated By</th>
+                        <th>Update Date & Time</th>
+                        <th>LI/LRID</th>
+                        <th colspan="3">Buttons</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                    {% for row in WonDeals.query.all() %}
+                    <tr>
+                        {% for row_data in row %}
+                        <td data-title="{{ row_data[0] }}">{{ row_data[1] }}</td>
+                        {% endfor %}
+                        <td data-title="update"><a class="btn btn-info mb-4"
+                                href="{{ url_for('wondeals_update', wondeals_id=row.id) }}">update</a>
+                        </td>
+                        <td data-title="delete"><a class="btn btn-info mb-4"
+                                href="{{ url_for('wondeals_delete', wondeals_id=row.id) }}">delete</a>
+                        </td>
+                        <td data-title="leave"><a class="btn btn-info mb-4"
+                            href="{{ url_for('wondeals_leaves', email_id=row.email_id, project_id=row.project_id) }}">Leave</a>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

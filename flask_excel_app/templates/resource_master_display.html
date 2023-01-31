@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="ml-auto">
+                {{ ResourceMaster.__table__ }}
+            </h4>
+        </div>
+        <div class="panel-body table-responsive" id="tables-display">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf" id="table">
+                <thead class="cf">
+                    <tr>
+                        {% for col in ResourceMaster.__table__.columns.keys() %}
+                        <th>{{ col }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in ResourceMaster.query.all() %}
+                    <tr>
+                        {% for row_data in row %}
+                        <td data-title="{{ row_data[0] }}">{{ row_data[1] }}</td>
+                        {% endfor %}
+                        <td data-title="delete"><a class="btn btn-info mb-4"
+                            href="{{ url_for('resource_update', nt_login_id=row.nt_login_id,li_lr_id=row.li_lr_id,email_id=row.email_id) }}">Update</a>
+                    </td>
+                    </tr>
+
+             
+                    {% endfor %}
+                    <a class="btn btn-info mb-4" href="/get_resource_csv">Download Excel</a>
+
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+<script type="text/javascript">
+    function exportReportToExcel() {
+    let table = document.getElementsByID("table");
+    TableToExcel.convert(table[0], { 
+    name: `file.xlsx`,
+    sheet: {
+    name: 'Sheet 1'
+    }
+    });
+    }
+   </script>

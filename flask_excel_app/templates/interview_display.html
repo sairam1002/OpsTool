@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="ml-auto">
+                {{ Interview.__table__ }}
+            </h4>
+        </div>
+        <div class="panel-body table-responsive" id="tables-display">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                <thead class="cf">
+                    <tr>
+                       
+                        <th>Id</th>
+                        <th>DSR ID</th>
+                        <th>Resource Name</th>
+                        <th>Location</th>
+                        <th>Skill</th>
+                        <th>Project Name</th>
+                        <th>Final Select</th>
+                        <th>Active</th>
+                        <th>External/Internal</th>
+                        <th>R1 Panel</th>
+                        <th>R1 Date</th>
+                        <th>R1 Status</th>
+                        <th>R2 Panel</th>
+                        <th>R2 Date</th>
+                        <th>R2 Status</th>
+                        <th>Current Status</th>
+                        <th>Final Select</th>
+                        <th>Action Pending</th>
+                        <th>Ops Action</th>
+                        <th>Due Date</th>
+                        <th>Active/Inactive</th>
+                        <th>Remarks</th>
+                        <th>Last Updated By</th>
+                        <th>Update Date & Time</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    {% for row in Interview.query.all() %}
+                    <tr>
+                        {% for row_data in row %}
+                        <td data-title="{{ row_data[0] }}">{{ row_data[1] }}</td>
+                        {% endfor %}
+                        <td data-title="update"><a class="btn btn-info mb-4"
+                                href="{{ url_for('interview_update', interview_id=row.id) }}">update</a>
+                        </td>
+                        <td data-title="delete"><a class="btn btn-info mb-4"
+                                href="{{ url_for('interview_delete', interview_id=row.id) }}">delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

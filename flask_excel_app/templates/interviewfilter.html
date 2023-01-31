@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        <fieldset class="form-group">
+            
+            <legend class="border-bottom mb-4">Interview Filters</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="project_name">Project Name</label>
+                <input class="form-control form-control-lg" id="project_name" name="project_name">
+                   
+            </div>
+            
+            <div class="form-group">
+                <label class="form-control-label" for="skill">Skill</label>
+                <input class="form-control form-control-lg" id="skill" name="skill">
+                   
+            </div>
+           
+            <div class="form-group">
+                <label class="form-control-label" for="res_name">Resource Name</label>
+                <input class="form-control form-control-lg" id="res=_name" name="res_name">
+                   
+            </div>
+           
+        </fieldset>
+        <div class="form-group">
+            <input class="btn btn-outline-info" id="submit" name="submit" type="submit" value="submit">
+        </div>
+    </form>
+</div>
+{% endblock content %}

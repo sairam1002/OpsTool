@@ -1,0 +1,343 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+           
+            <legend class="border-bottom mb-4">Demand data</legend>
+            
+            <div class="form-group">
+                {{ form.project_name.label(class="form-control-label") }}
+                {% if form.project_name.errors %}
+                {{ form.project_name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in project_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.project_name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.practice.label(class="form-control-label") }}
+
+                {% if form.practice.errors %}
+                {{ form.practice(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.practice.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.practice(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.slt_owner.label(class="form-control-label") }}
+                {% if form.slt_owner.errors %}
+                {{ form.slt_owner(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.slt_owner.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.slt_owner(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.owner.label(class="form-control-label") }}
+                {% if form.owner.errors %}
+                {{ form.owner(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.owner.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.owner(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.dsr_id.label(class="form-control-label") }}
+
+                {% if form.dsr_id.errors %}
+                {{ form.dsr_id(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.dsr_id.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.dsr_id(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            
+            <div class="form-group">
+                {{ form.acc.label(class="form-control-label") }}
+                {% if form.acc.errors %}
+                {{ form.acc(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.acc.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.acc(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+           <div class="form-group">
+                {{ form.practice_owner.label(class="form-control-label") }}
+                {% if form.practice_owner.errors %}
+                {{ form.practice_owner(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.practice_owner.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.practice_owner(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.hire_type.label(class="form-control-label") }}
+                {% if form.hire_type.errors %}
+                {{ form.hire_type(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.hire_type.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.hire_type(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{ form.new_hire.label(class="form-control-label") }}
+                {% if form.new_hire.errors %}
+                {{ form.new_hire(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.new_hire.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.new_hire(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.rep_email.label(class="form-control-label") }}
+                {% if form.rep_email.errors %}
+                {{ form.rep_email(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.rep_email.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.rep_email(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+
+            <div class="form-group">
+                {{ form.skill.label(class="form-control-label") }}
+                {% if form.skill.errors %}
+                {{ form.skill(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.skill.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.skill(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+
+           
+
+           
+            <div class="form-group">
+                {{ form.head_count.label(class="form-control-label") }}
+                {% if form.head_count.errors %}
+                {{ form.head_count(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.head_count.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.head_count(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                {{ form.loc.label(class="form-control-label") }}
+                {% if form.loc.errors %}
+                {{ form.loc(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.loc.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.loc(class="form-control form-control-lg")  }}
+                {% endif %}
+            </div>
+
+           
+            <div class="form-group">
+                {{ form.emp_grade.label(class="form-control-label") }}
+                {% if form.emp_grade.errors %}
+                {{ form.emp_grade(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.emp_grade.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.emp_grade(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.res_status.label(class="form-control-label") }}
+                {% if form.res_status.errors %}
+                {{ form.res_status(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.res_status.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.res_status(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.action_pending.label(class="form-control-label") }}
+                {% if form.action_pending.errors %}
+                {{ form.action_pending(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.action_pending.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.action_pending(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                {{ form.ext_int.label(class="form-control-label") }}
+                {% if form.ext_int.errors %}
+                {{ form.ext_int(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.ext_int.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.ext_int(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+          
+            <div class="form-group">
+                {{ form.dor.label(class="form-control-label") }}
+                {% if form.dor.errors %}
+                {{ form.dor(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.dor.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.dor(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            
+            <div class="form-group">
+                {{ form.Resource_name.label(class="form-control-label") }}
+                {% if form.Resource_name.errors %}
+                {{ form.Resource_name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.Resource_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.Resource_name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                {{ form.Resource_emp_id.label(class="form-control-label") }}
+                {% if form.Resource_emp_id.errors %}
+                {{ form.Resource_emp_id(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.Resource_emp_id.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.Resource_emp_id(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.no_of_resumes.label(class="form-control-label") }}
+                {% if form.no_of_resumes.errors %}
+                {{ form.no_of_resumes(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.no_of_resumes.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.no_of_resumes(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.screen_selects.label(class="form-control-label") }}
+                {% if form.screen_selects.errors %}
+                {{ form.screen_selects(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.screen_selects.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.screen_selects(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            
+            
+
+        </fieldset>
+        {% if title == "demand-update" %}
+        <div class="form-group">
+            <input class="btn btn-outline-info" id="submit" name="submit" type="submit" value="submit">
+        </div>
+        {% endif %}
+           
+
+            {% if title == "demand-insert" %}
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+        <div class="form-group">
+
+            {{ form.go_to_commit(class="btn btn-outline-info") }}
+
+        </div>
+        {% endif %}
+        
+    </form>
+</div>
+{% endblock content %}

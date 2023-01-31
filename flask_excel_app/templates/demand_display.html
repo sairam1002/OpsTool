@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="ml-auto">
+                Demand
+            </h4>
+        </div>
+        <div class="panel-body table-responsive" id="tables-display">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                <thead class="cf">
+                    <tr>
+                       
+                        <th>Id</th>
+                        <th>DSR ID</th>
+                        <th>Project Name</th>
+                        <th>Practice</th>
+                        <th>SLT Owner</th>
+                        <th>Owner</th>
+                        <th>Account</th>
+                        <th>Practice Owner</th>
+                        <th>Hire Type</th>
+                        <th>New Hire</th>
+                        <th>Email</th>
+                        <th>Skill</th>
+                        <th>Head Count</th>
+                        <th>Location</th>
+                        <th>Employee Grade</th>
+                        <th>Resource Status</th>
+                        <th>Action Pending</th>
+                        <th>External/Internal</th>
+                        <th>Date Of Requisition</th>
+                        <th>Age</th>
+                        <th>Resource Name</th>
+                        <th>Resource Employee Id</th>
+                        <th>No. of Resumes shared</th>
+                        <th>Screen Selects</th>
+                        <th>Last Updated By</th>
+                        <th>Update Date & Time</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    {% for row in Demand.query.all() %}
+                    <tr>
+                        {% for row_data in row %}
+                        <td data-title="{{ row_data[0] }}">{{ row_data[1] }}</td>
+                        {% endfor %}
+                        
+                    <td data-title="update"><a class="btn btn-info mb-4"
+                        href="{{ url_for('demand_update', demand_id=row.id) }}">update</a>
+                </td>
+                <td data-title="delete"><a class="btn btn-info mb-4"
+                    href="{{ url_for('demand_delete', demand_id=row.id) }}">delete</a>
+            </td>
+        </tr>
+               
+                    {% endfor %}
+                </tbody>
+
+                
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

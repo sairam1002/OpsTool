@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">slt</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="slt_owner">SLT</label>
+                <select class="form-control form-control-lg" id="slt_owner" name="slt_owner">
+                    <option value="">--select value--</option>
+                    <option value="Shailesh Rao">Shailesh Rao</option>
+                    <option value="Prachi Shah">Prachi Shah</option>
+                    <option value="Mahesh Haridasan">Mahesh Haridasan</option>
+                    <option value="Jamshir Wadia">Jamshir Wadia</option>
+                    <option value="Sreerag Raveendran">Sreerag Raveendran</option>
+                    <option value="Deepak Satyaprasad">Deepak Satyaprasad</option>
+                </select>
+            </div>
+            <legend class="border-bottom mb-4">Quarter</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="quarter">Quarter</label>
+                <select class="form-control form-control-lg" id="quarter" name="quarter">
+                    <option value="">--select value--</option>
+                    <option value="Q1">Q1</option>
+                    <option value="Q2">Q2</option>
+                    <option value="Q3">Q3</option>
+                    <option value="Q4">Q4</option>
+                </select>
+            </div>
+            <legend class="border-bottom mb-4">Sales_Stage</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="sales_stage">Sales_Stage</label>
+                <select class="form-control form-control-lg" id="sales_stage" name="sales_stage">
+                    <option value="">--select value--</option>
+                    <option value="1. Initiation stage">1. Initiation stage</option>
+                    <option value="2.Customer Discussion">2.Customer Discussion</option>
+                    <option value="3. Proposal Submitted">3. Proposal Submitted</option>
+                    <option value="4. Contract Negotiation">4. Contract Negotiation</option>
+                    <option value="5. Won-Pending">5. Won-Pending</option>
+                    <option value="6. Won">6. Won</option>
+                </select>
+            </div>
+            <legend class="border-bottom mb-4">Region</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="region">Region</label>
+                <select class="form-control form-control-lg" id="region" name="region">
+                    <option value="">--select value--</option>
+                    <option value="APAC">APAC</option>
+                    <option value="NA">NA</option>
+                    <option value="US">US</option>
+                    <option value="Europe">Europe</option>
+                    <option value="UAE">UAE</option>
+                    <option value="AU / NZ">AU/NZ</option>
+                    <option value="SG">SG</option>
+                    <option value="PH">PH</option>
+                </select>
+            </div>
+            <legend class="border-bottom mb-4">Country</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="country">Country</label>
+                <select class="form-control form-control-lg" id="country" name="country">
+                    <option value="">--select value--</option>
+                    <option value="AU">Australia</option>
+                    <option value="CA">Canada</option>
+                    <option value="IN">India</option>
+                    <option value="PH">Philippines</option>
+                    <option value="UK">UK</option>
+                    <option value="USA">USA</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="SG">Singapore</option>
+                </select>
+            </div>
+            <legend class="border-bottom mb-4">status</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="status">status</label>
+                <select class="form-control form-control-lg" id="status" name="status">
+                    <option value="">--select value--</option>
+                    <option value="won">Won</option>
+                    <option value="Commit">Commit</option>
+                    <option value="Pipeline">Pipeline</option>
+                </select>
+            </div>
+            <legend class="border-bottom mb-4">practice</legend>
+            <div class="form-group">
+                <label class="form-control-label" for="practice">practice</label>
+                <select class="form-control form-control-lg" id="practice" name="practice">
+                    <option value="">--select value--</option>
+                    <option value="R&F">R&F</option>
+                    <option value="Compliance">Compliance</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <input class="btn btn-outline-info" id="submit" name="submit" type="submit" value="submit">
+        </div>
+    </form>
+</div>
+{% endblock content %}

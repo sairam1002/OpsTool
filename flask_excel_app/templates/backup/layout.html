@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    {% if title %}
+    <title>Flask App - {{ title }}</title>
+    {% else %}
+    <title>Flask App</title>
+    {% endif %}
+    <style>
+        .mywith2 {
+            width: 85%;
+        }
+
+        .mywith1 {
+            width: 15%;
+        }
+
+        ::-webkit-scrollbar {
+            width: 1px;
+        }
+
+        .bg-1 {
+            background-color: #4C6373;
+        }
+
+        .text-1 {
+            color: #C3D3DA;
+        }
+
+        .text-1:hover {
+            color: #fff;
+        }
+
+        .active {
+            color: white;
+        }
+
+        .bg-2 {
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 90%;
+        }
+
+        .img-1 {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+        }
+
+        .username-1:hover {
+            text-decoration: none;
+        }
+
+        .head-1 {
+            color: #000000;
+        }
+
+        .head-1:hover {
+            text-decoration: none;
+        }
+
+        .message-1 {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+            overflow: scroll;
+            max-height: 250px;
+        }
+
+        .img-2 {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        .bg-3 {
+            width: 70%;
+        }
+
+        .comm {
+            color: green;
+            float: right;
+        }
+
+        .comm-1 {
+            border: 1px solid black;
+        }
+
+        .comm-1:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .main-container {
+            min-height: 100vh;
+            overflow: hidden;
+            display: block;
+            position: relative;
+            padding-bottom: 100px;
+        }
+
+        .container {
+            border-left: 0;
+            padding-left: 10;
+            margin-left: 0;
+        }
+
+        footer {
+
+            bottom: 0;
+            width: 100%;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 430px;
+        }
+
+        @media only screen and (max-width: 991px) {
+            .mywith2 {
+                width: 100%;
+            }
+
+            .mywith1 {
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+        function addressFunction() {
+            var x = document.getElementById("country").value;
+            var y = document.getElementById("resource").value;
+            var a = 0;
+            //document.getElementById("adrc").defaultValue = "16";
+            if (x == "IN_IN") {
+                if (y == "SA") {
+                    a = "21";
+                }
+                if (y == "SE") {
+                    a = "25";
+
+                } if (y == "SSE") {
+                    a = "30";
+
+                } if (y == "AC") {
+                    a = "43";
+
+                } if (y == "C") {
+                    a = "62";
+
+                } if (y == "SC") {
+                    a = "92";
+
+                } if (y == "M") {
+                    a = 123;
+
+                } if (y == "SM") {
+                    a = "165";
+
+                } if (y == "PM") {
+                    a = "219";
+
+                } if (y == "D") {
+                    a = "256";
+
+                } if (y == "SD") {
+                    a = "298";
+
+                } if (y == "VP") {
+                    a = "569";
+
+                } if (y == "EVP") {
+                    a = "569";
+
+                }
+            }
+
+
+            if (x == "NA_US") {
+                if (y == "SA") {
+                    a = "225";
+
+                }
+                if (y == "SE") {
+                    a = "293";
+
+                } if (y == "SSE") {
+                    a = "293";
+
+                } if (y == "AC") {
+                    a = "327";
+
+                } if (y == "C") {
+                    a = "429";
+
+                } if (y == "SC") {
+                    a = "535";
+
+                } if (y == "M") {
+                    a = "603";
+
+                } if (y == "SM") {
+                    a = "713";
+
+                } if (y == "PM") {
+                    a = "815";
+
+                } if (y == "D") {
+                    a = "925";
+
+                } if (y == "SD") {
+                    a = "1265";
+
+                } if (y == "VP") {
+                    a = "2267";
+
+                } if (y == "EVP") {
+                    a = "2267";
+
+                }
+            }
+
+            if (x == "NA_US_LTT/STT") {
+                if (y == "SA") {
+                    a = "225";
+
+                }
+                if (y == "SE") {
+                    a = "293";
+
+                } if (y == "SSE") {
+                    a = "293";
+
+                } if (y == "AC") {
+                    a = "365";
+
+                } if (y == "C") {
+                    a = "390";
+
+                } if (y == "SC") {
+                    a = "424";
+
+                } if (y == "M") {
+                    a = "475";
+
+                } if (y == "SM") {
+                    a = "560";
+
+                } if (y == "PM") {
+                    a = "637";
+
+                } if (y == "D") {
+                    a = "739";
+
+                } if (y == "SD") {
+                    a = "908";
+
+                } if (y == "VP") {
+                    a = "2267";
+
+                } if (y == "EVP") {
+                    a = "2267";
+
+                }
+            }
+            if (x == "NA_CA_Local") {
+                if (y == "SA") {
+                    a = "230";
+
+                }
+                if (y == "SE") {
+                    a = "236";
+
+                } if (y == "SSE") {
+                    a = "243";
+
+                } if (y == "AC") {
+                    a = "257";
+
+                } if (y == "C") {
+                    a = "277";
+
+                } if (y == "SC") {
+                    a = "331";
+
+                } if (y == "M") {
+                    a = "385";
+
+                } if (y == "SM") {
+                    a = "473";
+
+                } if (y == "PM") {
+                    a = "615";
+
+                } if (y == "D") {
+                    a = "730";
+
+                } if (y == "SD") {
+                    a = "885";
+
+                } if (y == "VP") {
+                    a = "1399";
+
+                } if (y == "EVP") {
+                    a = "1399";
+
+                }
+            }
+            if (x == "NA_CA_Landed") {
+                if (y == "SA") {
+                    a = "230";
+
+                }
+                if (y == "SE") {
+                    a = "236";
+
+                } if (y == "SSE") {
+                    a = "243";
+
+                } if (y == "AC") {
+                    a = "284";
+
+                } if (y == "C") {
+                    a = "297";
+
+                } if (y == "SC") {
+                    a = "318";
+
+                } if (y == "M") {
+                    a = "351";
+
+                } if (y == "SM") {
+                    a = "392";
+
+                } if (y == "PM") {
+                    a = "439";
+
+                } if (y == "D") {
+                    a = "527";
+
+                } if (y == "SD") {
+                    a = "824";
+
+                } if (y == "VP") {
+                    a = "1399";
+
+                } if (y == "EVP") {
+                    a = "1399";
+
+                }
+            }
+            if (x == "UK_GB") {
+                if (y == "SA") {
+                    a = "216";
+
+                }
+                if (y == "SE") {
+                    a = "216";
+
+                } if (y == "SSE") {
+                    a = "216";
+
+                } if (y == "AC") {
+                    a = "234";
+
+                } if (y == "C") {
+                    a = "275";
+
+                } if (y == "SC") {
+                    a = "378";
+
+                } if (y == "M") {
+                    a = "505";
+
+                } if (y == "SM") {
+                    a = "640";
+
+                } if (y == "PM") {
+                    a = "743";
+
+                } if (y == "D") {
+                    a = "865";
+
+                } if (y == "SD") {
+                    a = "1106";
+
+                } if (y == "VP") {
+                    a = "2018";
+
+                } if (y == "EVP") {
+                    a = "2018";
+
+                }
+            }
+            if (x == "UK_GB_LTT/STT") {
+                if (y == "SA") {
+                    a = "216";
+
+                }
+                if (y == "SE") {
+                    a = "216";
+
+                } if (y == "SSE") {
+                    a = "239";
+
+                } if (y == "AC") {
+                    a = "281";
+
+                } if (y == "C") {
+                    a = "289";
+
+                } if (y == "SC") {
+                    a = "303";
+
+                } if (y == "M") {
+                    a = "356";
+
+                } if (y == "SM") {
+                    a = "419";
+
+                } if (y == "PM") {
+                    a = "498";
+
+                } if (y == "D") {
+                    a = "654";
+
+                } if (y == "SD") {
+                    a = "823";
+
+                } if (y == "VP") {
+                    a = "2018";
+
+                } if (y == "EVP") {
+                    a = "2018";
+
+                }
+            }
+            if (x == "UK_Nearshore") {
+                if (y == "SA") {
+                    a = "216";
+
+                }
+                if (y == "SE") {
+                    a = "216";
+
+                } if (y == "SSE") {
+                    a = "216";
+
+                } if (y == "AC") {
+                    a = "234";
+
+                } if (y == "C") {
+                    a = "275";
+
+                } if (y == "SC") {
+                    a = "378";
+
+                } if (y == "M") {
+                    a = "505";
+
+                } if (y == "SM") {
+                    a = "640";
+
+                } if (y == "PM") {
+                    a = "743";
+
+                } if (y == "D") {
+                    a = "865";
+
+                } if (y == "SD") {
+                    a = "1106";
+
+                } if (y == "VP") {
+                    a = "2018";
+
+                } if (y == "EVP") {
+                    a = "2018";
+
+                }
+
+            } if (x == "UK_ZA") {
+                if (y == "SA") {
+                    a = "100";
+
+                }
+                if (y == "SE") {
+                    a = "108";
+
+                } if (y == "SSE") {
+                    a = "109";
+
+                } if (y == "AC") {
+                    a = "110";
+
+                } if (y == "C") {
+                    a = "119";
+
+                } if (y == "SC") {
+                    a = "169";
+
+                } if (y == "M") {
+                    a = "207";
+
+                } if (y == "SM") {
+                    a = "368";
+
+                } if (y == "PM") {
+                    a = "663";
+
+                } if (y == "D") {
+                    a = "447";
+
+                } if (y == "SD") {
+                    a = "447";
+
+                } if (y == "VP") {
+                    a = "553";
+
+                } if (y == "EVP") {
+                    a = "553";
+
+                }
+            } if (x == "APAC_HK") {
+                if (y == "SA") {
+                    a = "103";
+
+                }
+                if (y == "SE") {
+                    a = "103";
+
+                } if (y == "SSE") {
+                    a = "103";
+
+                } if (y == "AC") {
+                    a = "166";
+
+                } if (y == "C") {
+                    a = "230";
+
+                } if (y == "SC") {
+                    a = "297";
+
+                } if (y == "M") {
+                    a = "370";
+
+                } if (y == "SM") {
+                    a = "444";
+
+                } if (y == "PM") {
+                    a = "578";
+
+                } if (y == "D") {
+                    a = "638";
+
+                } if (y == "SD") {
+                    a = "867";
+
+                } if (y == "VP") {
+                    a = "987";
+
+                } if (y == "EVP") {
+                    a = "987";
+
+                }
+            } if (x == "APAC_SG") {
+                if (y == "SA") {
+                    a = "157";
+
+                }
+                if (y == "SE") {
+                    a = "157";
+
+                } if (y == "SSE") {
+                    a = "170";
+
+                } if (y == "AC") {
+                    a = "195";
+
+                } if (y == "C") {
+                    a = "245";
+
+                } if (y == "SC") {
+                    a = "302";
+
+                } if (y == "M") {
+                    a = "346";
+
+                } if (y == "SM") {
+                    a = "440";
+
+                } if (y == "PM") {
+                    a = "491";
+
+                } if (y == "D") {
+                    a = "623";
+
+                } if (y == "SD") {
+                    a = "868";
+
+                } if (y == "VP") {
+                    a = "1591";
+
+                } if (y == "EVP") {
+                    a = "1591";
+
+                }
+            } if (x == "APAC_AE") {
+                if (y == "SA") {
+                    a = "165";
+
+                }
+                if (y == "SE") {
+                    a = "165";
+
+                } if (y == "SSE") {
+                    a = "177";
+
+                } if (y == "AC") {
+                    a = "216";
+
+                } if (y == "C") {
+                    a = "258";
+
+                } if (y == "SC") {
+                    a = "316";
+
+                } if (y == "M") {
+                    a = "381";
+
+                } if (y == "SM") {
+                    a = "486";
+
+                } if (y == "PM") {
+                    a = "488";
+
+                } if (y == "D") {
+                    a = "598";
+
+                } if (y == "SD") {
+                    a = "786";
+
+                } if (y == "VP") {
+                    a = "1656";
+
+                } if (y == "EVP") {
+                    a = "1656";
+
+                }
+            } if (x == "APAC_MY") {
+                if (y == "SA") {
+                    a = "64";
+
+                }
+                if (y == "SE") {
+                    a = "64";
+
+                } if (y == "SSE") {
+                    a = "64";
+
+                } if (y == "AC") {
+                    a = "86";
+
+                } if (y == "C") {
+                    a = "129";
+
+                } if (y == "SC") {
+                    a = "166";
+
+                } if (y == "M") {
+                    a = "201";
+
+                } if (y == "SM") {
+                    a = "261";
+
+                } if (y == "PM") {
+                    a = "390";
+
+                } if (y == "D") {
+                    a = "462";
+
+                } if (y == "SD") {
+                    a = "472";
+
+                } if (y == "VP") {
+                    a = "483";
+
+                } if (y == "EVP") {
+                    a = "483";
+
+                }
+            } if (x == "APAC_TW") {
+                if (y == "SA") {
+                    a = "78";
+
+                }
+                if (y == "SE") {
+                    a = "78";
+
+                } if (y == "SSE") {
+                    a = "78";
+
+                } if (y == "AC") {
+                    a = "121";
+
+                } if (y == "C") {
+                    a = "156";
+
+                } if (y == "SC") {
+                    a = "217";
+
+                } if (y == "M") {
+                    a = "217";
+
+                } if (y == "SM") {
+                    a = "333";
+
+                } if (y == "PM") {
+                    a = "350";
+
+                } if (y == "D") {
+                    a = "355";
+
+                } if (y == "SD") {
+                    a = "385";
+
+                } if (y == "VP") {
+                    a = "409";
+
+                } if (y == "EVP") {
+                    a = "409";
+
+                }
+            }
+            if (x == "APAC_SA") {
+                if (y == "SA") {
+                    a = "203";
+
+                }
+                if (y == "SE") {
+                    a = "203";
+
+                } if (y == "SSE") {
+                    a = "241";
+
+                } if (y == "AC") {
+                    a = "292";
+
+                } if (y == "C") {
+                    a = "390";
+
+                } if (y == "SC") {
+                    a = "408";
+
+                } if (y == "M") {
+                    a = "565";
+
+                } if (y == "SM") {
+                    a = "667";
+
+                } if (y == "PM") {
+                    a = "1014";
+
+                } if (y == "D") {
+                    a = "1014";
+
+                } if (y == "SD") {
+                    a = "1100";
+
+                } if (y == "VP") {
+                    a = "1683";
+
+                } if (y == "EVP") {
+                    a = "1683";
+
+                }
+            }
+
+            if (x == "DC_CH") {
+                if (y == "SA") {
+                    a = "67";
+                }
+                if (y == "SE") {
+                    a = "79";
+
+                } if (y == "SSE") {
+                    a = "90";
+
+                } if (y == "AC") {
+                    a = "111";
+
+                } if (y == "C") {
+                    a = "147";
+
+                } if (y == "SC") {
+                    a = "208";
+
+                } if (y == "M") {
+                    a = "300";
+
+                } if (y == "SM") {
+                    a = "343";
+
+                } if (y == "PM") {
+                    a = "419";
+
+                } if (y == "D") {
+                    a = "431";
+
+                } if (y == "SD") {
+                    a = "431";
+
+                } if (y == "VP") {
+                    a = "733";
+
+                } if (y == "EVP") {
+                    a = "733";
+
+                }
+            } if (x == "DC_PH") {
+                if (y == "SA") {
+                    a = "41";
+
+                }
+                if (y == "SE") {
+                    a = "47";
+
+                } if (y == "SSE") {
+                    a = "52";
+
+                } if (y == "AC") {
+                    a = "66";
+
+                } if (y == "C") {
+                    a = "88";
+
+                } if (y == "SC") {
+                    a = "133";
+
+                } if (y == "M") {
+                    a = "188";
+
+                } if (y == "SM") {
+                    a = "221";
+
+                } if (y == "PM") {
+                    a = "307";
+
+                } if (y == "D") {
+                    a = "455";
+
+                } if (y == "SD") {
+                    a = "455";
+
+                } if (y == "VP") {
+                    a = "511";
+
+                } if (y == "EVP") {
+                    a = "511";
+                }
+            }
+            document.getElementById('updatedVal').innerHTML = a;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg  bg-1">
+            <div class="container">
+                <div class="container">
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link text-1 active" href="{{ url_for('home') }}">BookingForecast</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-1 active" href="{{ url_for('wondeals_display') }}">Wondeals</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-1 active" href="{{ url_for('commit_display') }}">Commit</a>
+                            </li>
+
+                        </ul>
+                        <ul class="navbar-nav navbar-right">
+                            <!-- <li>
+                                      <a class="nav-link text-1" href="#">New Post</a>
+                                  </li> -->
+                            {% if current_user.is_authenticated %}
+                            <li>
+                            <li>
+                                <a class="nav-item nav-link" href="{{ url_for('bookingforecast_insert') }}">Insert</a>
+                            </li>
+                            <li>
+                                <a class="nav-item nav-link" href="{{ url_for('selectbookingforecast') }}">Update</a>
+                            </li>
+                            <li>
+                                <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+                            </li>
+                            <li>
+                                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                            </li>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                            </li>
+                            <li>
+                                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-10">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-2">
+                <div class="content-section">
+                    <h3>Filter Buttons</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-light"><a
+                                href="{{ url_for('bookingforecast_filter') }}">Booking Forecast Filters</a></li>
+                        <!-- <li class="list-group-item list-group-item-light">Announcements</li>
+                        <li class="list-group-item list-group-item-light">Calendars</li>
+                        <li class="list-group-item list-group-item-light">etc</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

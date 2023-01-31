@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="ml-auto">
+                Booking Forecast Filter 
+            </h4>
+        </div>
+
+        <div class="panel-body table-responsive" id="tables-display">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                <thead class="cf">
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Practice</th>
+                        <th>SLT Owner</th>
+                        <th>Practice Owner</th>
+                        <th>Quarter</th>
+                        <th>Sales Stage</th>
+                        <th>Project Type</th>
+                        <th>Region</th>
+                        <th>Country</th>
+                        <th>Win Probability</th>
+                        <th>Status</th>
+                        <th>Currency</th>
+                        <th>Deal Value</th>
+                        <th>Deal Value(EUR)</th>
+                        <th>Last update by</th>
+                        <th>Update Date and time</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row_key in table_data["rows"].keys() %}
+                    <tr>
+                        {% for row_data in table_data["rows"][row_key] %}
+                        <td data-title="{{ row_data[0] }}">{{ row_data }}</td>
+                        {% endfor %}
+                        <td data-title="update"><a class="btn btn-info mb-4"
+                                href="{{ url_for('bookingforecast_update', bookingforecast_id=table_data['rows'][row_key][0]) }}">update</a>
+                        </td>
+                        <td data-title="delete"><a class="btn btn-info mb-4"
+                            href="{{ url_for('bookingforecast_delete', bookingforecast_id=table_data['rows'][row_key][0]) }}">delete</a>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

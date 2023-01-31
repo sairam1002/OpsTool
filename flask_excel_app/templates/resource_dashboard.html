@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script type="text/javascript" src="https://yourweb.com/inc/chart.utils.js"></script>
+    <div class="site-header-logo">
+        <h1 class="text-center">
+            Resource Dashboard
+        </h1>
+    </div>
+
+    <div class="row p-4">
+        <div class="card m-auto" style="width: 90%;" data-aos="fade-left">
+            <div class="card-body">
+                <div id="chart1"></div>
+                <table class="table table-hover table-primary "> 
+                  <tr>
+                    <td>Allocated</td><td>{{allocated}}</td>
+                  </tr>
+                  <tr>
+                    <td>Unallocated&nbsp;</td><td>{{unallocated}}</td>
+                  </tr>
+                </table>
+            </div>
+            </div>
+        </div>
+
+        <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
+            <div class="card-body">
+                <div id="chart2"></div>
+            </div>
+        </div>
+
+        <div class="card mb-4 m-auto" style="width: 90%;" data-aos="slide-up">
+            <div class="card-body">
+                <div id="chart3"></div>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam beatae eos esse hic tempore, itaque dolor quod. Eligendi debitis 
+                    doloremque itaque architecto velit aute</p>
+            </div>
+            </div>
+            <div class="card mb-4 m-auto" style="width: 90%;">
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+            <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+
+            </div>
+        </div>
+    </div>
+    <!-- plotly CDN -->
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var graphs1 = {{ graph1JSON | safe}};
+        Plotly.plot("chart1", graphs1,{});
+
+        console.log("plot1");
+        var graphs2 = {{ graph2JSON | safe}};
+        Plotly.plot("chart2", graphs2,{});
+
+        console.log("plot2");
+
+    </script>
+    <script>
+  var datas={{grades|tojson}}
+  console.log(datas)
+  var xvals=[]
+  var yvals=[]
+  for (var key in datas){
+    xvals.push(key)
+    yvals.push(datas[key])
+  }
+  var barColors = []
+  var i=0
+  while(i<xvals.length){
+    x='#8C'+Math.floor(Math.random()*5777215).toString(16)
+    if(barColors.indexOf(x)==-1 || x!='#8CFFFFFF'){
+        barColors.push(x);
+        i=i+1;
+    }
+  }
+  console.log(barColors)
+  new Chart("myChart", {
+    type: "bar",
+    data: {
+    labels: xvals,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yvals,
+      borderWidth: 2,
+      borderRadius: Number.MAX_VALUE,
+      borderSkipped: false,
+    }]
+  }, 
+    options: {
+      legend:{display:false},
+      scales: {
+        yAxes: [{ticks: {min: 0, max:100}}],
+      }
+  }
+  });
+  new Chart("myChart2", {
+    type: "pie",
+    data: {
+    labels: xvals,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yvals,
+    }]
+  },
+    options: {
+      scales: {
+        yAxes: [{ticks: {min: 0, max:100}}],
+      }
+    }
+  });
+  </script>
+
+{% endblock %}

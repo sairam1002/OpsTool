@@ -1,0 +1,309 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Interview data</legend>
+            <div class="form-group">
+                {{ form.res_name.label(class="form-control-label") }}
+
+                {% if form.res_name.errors %}
+                {{ form.res_name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.res_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.res_name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <!--  -->
+            <div class="form-group">
+                {{ form.dsr_id.label(class="form-control-label") }}
+                {% if form.dsr_id.errors %}
+                {{ form.dsr_id(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.dsr_id.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.dsr_id(class="form-control form-control-lg",onchange ="EnableDisableTextBox1(this)") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.active.label(class="form-control-label") }}
+                {% if form.active.errors %}
+                {{ form.active(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.active.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.active(class="form-control form-control-lg",onchange ="EnableDisableTextBox1(this)") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.final_select.label(class="form-control-label") }}
+                {% if form.final_select.errors %}
+                {{ form.final_select(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.final_select.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.final_select(class="form-control form-control-lg",onchange ="EnableDisableTextBox1(this)") }}
+                {% endif %}
+            </div>
+            <!--  -->
+            <div class="form-group">
+                {{ form.loc.label(class="form-control-label") }}
+                {% if form.loc.errors %}
+                {{ form.loc(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.loc.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.loc(class="form-control form-control-lg",onchange ="EnableDisableTextBox1(this)") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.skill.label(class="form-control-label") }}
+                {% if form.skill.errors %}
+                {{ form.skill(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.skill.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.skill(class="form-control form-control-lg", onchange ="EnableDisableTextBox(this)") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.project_name.label(class="form-control-label") }}
+                {% if form.project_name.errors %}
+                {{ form.project_name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.project_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.project_name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.ext_int.label(class="form-control-label") }}
+                {% if form.ext_int.errors %}
+                {{ form.ext_int(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.ext_int.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.ext_int(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.r1_panel.label(class="form-control-label") }}
+                {% if form.r1_panel.errors %}
+                {{ form.r1_panel(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.r1_panel.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.r1_panel(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.r1_date.label(class="form-control-label") }}
+                {% if form.r1_date.errors %}
+                {{ form.r1_date(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.r1_int.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.r1_date(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.r1_status.label(class="form-control-label") }}
+                {% if form.r1_status.errors %}
+                {{ form.r1_status(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.r1_status.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.r1_status(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.r2_panel.label(class="form-control-label") }}
+                {% if form.r2_panel.errors %}
+                {{ form.r2_panel(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.r2_panel.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.r2_panel(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.r2_date.label(class="form-control-label") }}
+                {% if form.r2_date.errors %}
+                {{ form.r2_date(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.r2_date.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.r2_date(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.r2_status.label(class="form-control-label") }}
+                {% if form.r2_status.errors %}
+                {{ form.r2_status(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.r2_status.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.r2_status(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+
+            <div class="form-group">
+                {{ form.current_status.label(class="form-control-label") }}
+                {% if form.current_status.errors %}
+                {{ form.current_status(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.current_status.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.current_status(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.final_select.label(class="form-control-label") }}
+                {% if form.final_select.errors %}
+                {{ form.final_select(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.final_select.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.final_select(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.act_pending.label(class="form-control-label") }}
+                {% if form.act_pending.errors %}
+                {{ form.act_pending(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.act_pending.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.act_pending(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.ops_action.label(class="form-control-label") }}
+                {% if form.ops_action.errors %}
+                {{ form.ops_action(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.ops_action.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.ops_action(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.due_date.label(class="form-control-label") }}
+                {% if form.due_date.errors %}
+                {{ form.due_date(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.due_date.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.due_date(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.active_inactive.label(class="form-control-label") }}
+                {% if form.active_inactive.errors %}
+                {{ form.active_inactive(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.active_inactive.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.active_inactive(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.remarks.label(class="form-control-label") }}
+                {% if form.remarks.errors %}
+                {{ form.remarks(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.remarks.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.remarks(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+
+        </fieldset>
+        {% if title == "interview-insert" %}
+        <div class="form-group">
+
+            {{ form.go_to_commit(class="btn btn-outline-info") }}
+
+        </div>
+        {% endif %}
+        <div class="form-group">
+
+            {{ form.submit(class="btn btn-outline-info") }}
+
+        </div>
+        
+
+
+    </form>
+</div>
+{% endblock content %}

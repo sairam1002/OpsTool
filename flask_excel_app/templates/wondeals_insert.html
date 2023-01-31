@@ -1,0 +1,1012 @@
+{% extends "layout.html" %}
+{% block content %}
+<script>
+    function addressFunction() {
+        var x = document.getElementById("country").value;
+        var y = document.getElementById("resource").value;
+        var a = 0;
+        //document.getElementById("adrc").defaultValue = "16";
+        if (x == "IN_IN") {
+            if (y == "SA") {
+                a = "21";
+            }
+            if (y == "SE") {
+                a = "25";
+
+            } if (y == "SSE") {
+                a = "30";
+
+            } if (y == "AC") {
+                a = "43";
+
+            } if (y == "C") {
+                a = "62";
+
+            } if (y == "SC") {
+                a = "92";
+
+            } if (y == "M") {
+                a = 123;
+
+            } if (y == "SM") {
+                a = "165";
+
+            } if (y == "PM") {
+                a = "219";
+
+            } if (y == "D") {
+                a = "256";
+
+            } if (y == "SD") {
+                a = "298";
+
+            } if (y == "VP") {
+                a = "569";
+
+            } if (y == "EVP") {
+                a = "569";
+
+            }
+        }
+
+
+        if (x == "NA_US") {
+            if (y == "SA") {
+                a = "225";
+
+            }
+            if (y == "SE") {
+                a = "293";
+
+            } if (y == "SSE") {
+                a = "293";
+
+            } if (y == "AC") {
+                a = "327";
+
+            } if (y == "C") {
+                a = "429";
+
+            } if (y == "SC") {
+                a = "535";
+
+            } if (y == "M") {
+                a = "603";
+
+            } if (y == "SM") {
+                a = "713";
+
+            } if (y == "PM") {
+                a = "815";
+
+            } if (y == "D") {
+                a = "925";
+
+            } if (y == "SD") {
+                a = "1265";
+
+            } if (y == "VP") {
+                a = "2267";
+
+            } if (y == "EVP") {
+                a = "2267";
+
+            }
+        }
+
+        if (x == "NA_US_LTT/STT") {
+            if (y == "SA") {
+                a = "225";
+
+            }
+            if (y == "SE") {
+                a = "293";
+
+            } if (y == "SSE") {
+                a = "293";
+
+            } if (y == "AC") {
+                a = "365";
+
+            } if (y == "C") {
+                a = "390";
+
+            } if (y == "SC") {
+                a = "424";
+
+            } if (y == "M") {
+                a = "475";
+
+            } if (y == "SM") {
+                a = "560";
+
+            } if (y == "PM") {
+                a = "637";
+
+            } if (y == "D") {
+                a = "739";
+
+            } if (y == "SD") {
+                a = "908";
+
+            } if (y == "VP") {
+                a = "2267";
+
+            } if (y == "EVP") {
+                a = "2267";
+
+            }
+        }
+        if (x == "NA_CA_Local") {
+            if (y == "SA") {
+                a = "230";
+
+            }
+            if (y == "SE") {
+                a = "236";
+
+            } if (y == "SSE") {
+                a = "243";
+
+            } if (y == "AC") {
+                a = "257";
+
+            } if (y == "C") {
+                a = "277";
+
+            } if (y == "SC") {
+                a = "331";
+
+            } if (y == "M") {
+                a = "385";
+
+            } if (y == "SM") {
+                a = "473";
+
+            } if (y == "PM") {
+                a = "615";
+
+            } if (y == "D") {
+                a = "730";
+
+            } if (y == "SD") {
+                a = "885";
+
+            } if (y == "VP") {
+                a = "1399";
+
+            } if (y == "EVP") {
+                a = "1399";
+
+            }
+        }
+        if (x == "NA_CA_Landed") {
+            if (y == "SA") {
+                a = "230";
+
+            }
+            if (y == "SE") {
+                a = "236";
+
+            } if (y == "SSE") {
+                a = "243";
+
+            } if (y == "AC") {
+                a = "284";
+
+            } if (y == "C") {
+                a = "297";
+
+            } if (y == "SC") {
+                a = "318";
+
+            } if (y == "M") {
+                a = "351";
+
+            } if (y == "SM") {
+                a = "392";
+
+            } if (y == "PM") {
+                a = "439";
+
+            } if (y == "D") {
+                a = "527";
+
+            } if (y == "SD") {
+                a = "824";
+
+            } if (y == "VP") {
+                a = "1399";
+
+            } if (y == "EVP") {
+                a = "1399";
+
+            }
+        }
+        if (x == "UK_GB") {
+            if (y == "SA") {
+                a = "216";
+
+            }
+            if (y == "SE") {
+                a = "216";
+
+            } if (y == "SSE") {
+                a = "216";
+
+            } if (y == "AC") {
+                a = "234";
+
+            } if (y == "C") {
+                a = "275";
+
+            } if (y == "SC") {
+                a = "378";
+
+            } if (y == "M") {
+                a = "505";
+
+            } if (y == "SM") {
+                a = "640";
+
+            } if (y == "PM") {
+                a = "743";
+
+            } if (y == "D") {
+                a = "865";
+
+            } if (y == "SD") {
+                a = "1106";
+
+            } if (y == "VP") {
+                a = "2018";
+
+            } if (y == "EVP") {
+                a = "2018";
+
+            }
+        }
+        if (x == "UK_GB_LTT/STT") {
+            if (y == "SA") {
+                a = "216";
+
+            }
+            if (y == "SE") {
+                a = "216";
+
+            } if (y == "SSE") {
+                a = "239";
+
+            } if (y == "AC") {
+                a = "281";
+
+            } if (y == "C") {
+                a = "289";
+
+            } if (y == "SC") {
+                a = "303";
+
+            } if (y == "M") {
+                a = "356";
+
+            } if (y == "SM") {
+                a = "419";
+
+            } if (y == "PM") {
+                a = "498";
+
+            } if (y == "D") {
+                a = "654";
+
+            } if (y == "SD") {
+                a = "823";
+
+            } if (y == "VP") {
+                a = "2018";
+
+            } if (y == "EVP") {
+                a = "2018";
+
+            }
+        }
+        if (x == "UK_Nearshore") {
+            if (y == "SA") {
+                a = "216";
+
+            }
+            if (y == "SE") {
+                a = "216";
+
+            } if (y == "SSE") {
+                a = "216";
+
+            } if (y == "AC") {
+                a = "234";
+
+            } if (y == "C") {
+                a = "275";
+
+            } if (y == "SC") {
+                a = "378";
+
+            } if (y == "M") {
+                a = "505";
+
+            } if (y == "SM") {
+                a = "640";
+
+            } if (y == "PM") {
+                a = "743";
+
+            } if (y == "D") {
+                a = "865";
+
+            } if (y == "SD") {
+                a = "1106";
+
+            } if (y == "VP") {
+                a = "2018";
+
+            } if (y == "EVP") {
+                a = "2018";
+
+            }
+
+        } if (x == "UK_ZA") {
+            if (y == "SA") {
+                a = "100";
+
+            }
+            if (y == "SE") {
+                a = "108";
+
+            } if (y == "SSE") {
+                a = "109";
+
+            } if (y == "AC") {
+                a = "110";
+
+            } if (y == "C") {
+                a = "119";
+
+            } if (y == "SC") {
+                a = "169";
+
+            } if (y == "M") {
+                a = "207";
+
+            } if (y == "SM") {
+                a = "368";
+
+            } if (y == "PM") {
+                a = "663";
+
+            } if (y == "D") {
+                a = "447";
+
+            } if (y == "SD") {
+                a = "447";
+
+            } if (y == "VP") {
+                a = "553";
+
+            } if (y == "EVP") {
+                a = "553";
+
+            }
+        } if (x == "APAC_HK") {
+            if (y == "SA") {
+                a = "103";
+
+            }
+            if (y == "SE") {
+                a = "103";
+
+            } if (y == "SSE") {
+                a = "103";
+
+            } if (y == "AC") {
+                a = "166";
+
+            } if (y == "C") {
+                a = "230";
+
+            } if (y == "SC") {
+                a = "297";
+
+            } if (y == "M") {
+                a = "370";
+
+            } if (y == "SM") {
+                a = "444";
+
+            } if (y == "PM") {
+                a = "578";
+
+            } if (y == "D") {
+                a = "638";
+
+            } if (y == "SD") {
+                a = "867";
+
+            } if (y == "VP") {
+                a = "987";
+
+            } if (y == "EVP") {
+                a = "987";
+
+            }
+        } if (x == "APAC_SG") {
+            if (y == "SA") {
+                a = "157";
+
+            }
+            if (y == "SE") {
+                a = "157";
+
+            } if (y == "SSE") {
+                a = "170";
+
+            } if (y == "AC") {
+                a = "195";
+
+            } if (y == "C") {
+                a = "245";
+
+            } if (y == "SC") {
+                a = "302";
+
+            } if (y == "M") {
+                a = "346";
+
+            } if (y == "SM") {
+                a = "440";
+
+            } if (y == "PM") {
+                a = "491";
+
+            } if (y == "D") {
+                a = "623";
+
+            } if (y == "SD") {
+                a = "868";
+
+            } if (y == "VP") {
+                a = "1591";
+
+            } if (y == "EVP") {
+                a = "1591";
+
+            }
+        } if (x == "APAC_AE") {
+            if (y == "SA") {
+                a = "165";
+
+            }
+            if (y == "SE") {
+                a = "165";
+
+            } if (y == "SSE") {
+                a = "177";
+
+            } if (y == "AC") {
+                a = "216";
+
+            } if (y == "C") {
+                a = "258";
+
+            } if (y == "SC") {
+                a = "316";
+
+            } if (y == "M") {
+                a = "381";
+
+            } if (y == "SM") {
+                a = "486";
+
+            } if (y == "PM") {
+                a = "488";
+
+            } if (y == "D") {
+                a = "598";
+
+            } if (y == "SD") {
+                a = "786";
+
+            } if (y == "VP") {
+                a = "1656";
+
+            } if (y == "EVP") {
+                a = "1656";
+
+            }
+        } if (x == "APAC_MY") {
+            if (y == "SA") {
+                a = "64";
+
+            }
+            if (y == "SE") {
+                a = "64";
+
+            } if (y == "SSE") {
+                a = "64";
+
+            } if (y == "AC") {
+                a = "86";
+
+            } if (y == "C") {
+                a = "129";
+
+            } if (y == "SC") {
+                a = "166";
+
+            } if (y == "M") {
+                a = "201";
+
+            } if (y == "SM") {
+                a = "261";
+
+            } if (y == "PM") {
+                a = "390";
+
+            } if (y == "D") {
+                a = "462";
+
+            } if (y == "SD") {
+                a = "472";
+
+            } if (y == "VP") {
+                a = "483";
+
+            } if (y == "EVP") {
+                a = "483";
+
+            }
+        } if (x == "APAC_TW") {
+            if (y == "SA") {
+                a = "78";
+
+            }
+            if (y == "SE") {
+                a = "78";
+
+            } if (y == "SSE") {
+                a = "78";
+
+            } if (y == "AC") {
+                a = "121";
+
+            } if (y == "C") {
+                a = "156";
+
+            } if (y == "SC") {
+                a = "217";
+
+            } if (y == "M") {
+                a = "217";
+
+            } if (y == "SM") {
+                a = "333";
+
+            } if (y == "PM") {
+                a = "350";
+
+            } if (y == "D") {
+                a = "355";
+
+            } if (y == "SD") {
+                a = "385";
+
+            } if (y == "VP") {
+                a = "409";
+
+            } if (y == "EVP") {
+                a = "409";
+
+            }
+        }
+        if (x == "APAC_SA") {
+            if (y == "SA") {
+                a = "203";
+
+            }
+            if (y == "SE") {
+                a = "203";
+
+            } if (y == "SSE") {
+                a = "241";
+
+            } if (y == "AC") {
+                a = "292";
+
+            } if (y == "C") {
+                a = "390";
+
+            } if (y == "SC") {
+                a = "408";
+
+            } if (y == "M") {
+                a = "565";
+
+            } if (y == "SM") {
+                a = "667";
+
+            } if (y == "PM") {
+                a = "1014";
+
+            } if (y == "D") {
+                a = "1014";
+
+            } if (y == "SD") {
+                a = "1100";
+
+            } if (y == "VP") {
+                a = "1683";
+
+            } if (y == "EVP") {
+                a = "1683";
+
+            }
+        }
+
+        if (x == "DC_CH") {
+            if (y == "SA") {
+                a = "67";
+            }
+            if (y == "SE") {
+                a = "79";
+
+            } if (y == "SSE") {
+                a = "90";
+
+            } if (y == "AC") {
+                a = "111";
+
+            } if (y == "C") {
+                a = "147";
+
+            } if (y == "SC") {
+                a = "208";
+
+            } if (y == "M") {
+                a = "300";
+
+            } if (y == "SM") {
+                a = "343";
+
+            } if (y == "PM") {
+                a = "419";
+
+            } if (y == "D") {
+                a = "431";
+
+            } if (y == "SD") {
+                a = "431";
+
+            } if (y == "VP") {
+                a = "733";
+
+            } if (y == "EVP") {
+                a = "733";
+
+            }
+        } if (x == "DC_PH") {
+            if (y == "SA") {
+                a = "41";
+
+            }
+            if (y == "SE") {
+                a = "47";
+
+            } if (y == "SSE") {
+                a = "52";
+
+            } if (y == "AC") {
+                a = "66";
+
+            } if (y == "C") {
+                a = "88";
+
+            } if (y == "SC") {
+                a = "133";
+
+            } if (y == "M") {
+                a = "188";
+
+            } if (y == "SM") {
+                a = "221";
+
+            } if (y == "PM") {
+                a = "307";
+
+            } if (y == "D") {
+                a = "455";
+
+            } if (y == "SD") {
+                a = "455";
+
+            } if (y == "VP") {
+                a = "511";
+
+            } if (y == "EVP") {
+                a = "511";
+            }
+        }
+        document.getElementById('updatedVal').innerHTML = a;
+    }
+
+</script>
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            {% if title == "wondeals-insert" %}
+            <legend class="border-bottom mb-4">Insert data</legend>
+            {% endif %}
+            {% if title == "update-wondeals" %}
+            <legend class="border-bottom mb-4">update data</legend>
+            {% endif %}
+            <div class="form-group">
+                {{ form.project_id.label(class="form-control-label") }}
+                {% if form.project_id.errors %}
+                {{ form.project_id(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.project_id.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.project_id(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.carryforward.label(class="form-control-label") }}
+                {% if form.carryforward.errors %}
+                {{ form.carryforward(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.carryforward.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.carryforward(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.project_type.label(class="form-control-label") }}
+                {% if form.project_type.errors %}
+                {{ form.project_type(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.project_type.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.project_type(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.email_id.label(class="form-control-label") }}
+                {% if form.email_id.errors %}
+                {{ form.email_id(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email_id.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.email_id(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.project_name.label(class="form-control-label") }}
+                {% if form.project_name.errors %}
+                {{ form.project_name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.project_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.project_name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.slt_owner.label(class="form-control-label") }}
+                {% if form.slt_owner.errors %}
+                {{ form.slt_owner(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.slt_owner.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.slt_owner(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.practice_owner.label(class="form-control-label") }}
+                {% if form.practice_owner.errors %}
+                {{ form.practice_owner(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.practice_owner.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.practice_owner(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.practice.label(class="form-control-label") }}
+                {% if form.practice.errors %}
+                {{ form.practice(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.practice.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.practice(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.quarter.label(class="form-control-label") }}
+                {% if form.quarter.errors %}
+                {{ form.quarter(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.quarter.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.quarter(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.project_manager.label(class="form-control-label") }}
+                {% if form.project_manager.errors %}
+                {{ form.project_manager(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.project_manager.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.project_manager(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.resource_name.label(class="form-control-label") }}
+                {% if form.resource_name.errors %}
+                {{ form.resource_name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.resource_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.resource_name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.resource_country.label(class="form-control-label") }}
+                {% if form.resource_country.errors %}
+                {{ form.resource_country(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.resource_country.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.resource_country(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.resource_level.label(class="form-control-label") }}
+                {% if form.resource_level.errors %}
+                {{ form.resource_level(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.resource_level.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.resource_level(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.onshore_offshore.label(class="form-control-label") }}
+                {% if form.onshore_offshore.errors %}
+                {{ form.onshore_offshore(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.onshore_offshore.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.onshore_offshore(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.project_country.label(class="form-control-label") }}
+                {% if form.project_country.errors %}
+                {{ form.project_country(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.project_country.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.project_country(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.fte.label(class="form-control-label") }}
+                {% if form.fte.errors %}
+                {{ form.fte(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.fte.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.fte(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.start_date_wondeals.label(class="form-control-label") }}
+                {% if form.start_date_wondeals.errors %}
+                {{ form.start_date_wondeals(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.start_date_wondeals.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.start_date_wondeals(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.end_date_wondeals.label(class="form-control-label") }}
+                {% if form.end_date_wondeals.errors %}
+                {{ form.end_date_wondeals(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.end_date_wondeals.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.end_date_wondeals(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.revenue_daily_rate.label(class="form-control-label") }}
+                {% if form.revenue_daily_rate.errors %}
+                {{ form.revenue_daily_rate(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.revenue_daily_rate.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.revenue_daily_rate(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        {% if title == "update-wondeals" %}
+        <div class="form-group">
+            <input class="btn btn-outline-info" id="submit" name="submit" type="submit" value="submit">
+        </div>
+        {% endif %}
+        {% if title == "wondeals-insert" %}
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+        <div class="form-group">
+            <a class="btn btn-info mb-4" href="{{ url_for('wondeals_display') }}">Submit</a>
+        </div>
+        {% endif %}
+    </form>
+</div>
+{% endblock content %}
